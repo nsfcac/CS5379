@@ -22,3 +22,5 @@ build/
 *.egg
 *.tar.gz
 *.zip
+err.*
+out.*
