@@ -24,3 +24,6 @@ build/
 *.zip
 err.*
 out.*
+*.out
+*.err
+*.exe
