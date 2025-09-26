@@ -22,13 +22,13 @@ gpu-programming/
 │   └── cuda_error_check.h    # CUDA error handling utilities
 └── project/                  # Individual project assignments
     ├── README.md             # Project-specific instructions
-    └── [project files]       # Student implementation files
+    └── [project files]       # Starter files
 ```
 
 ## 🎯 Learning Path
 
 ### **Step 1: Foundational Learning (`lecture/`)**
-**Objective**: Master GPU programming fundamentals through progressive optimization
+**Objective**: Master GPU programming fundamentals through progressive optimization.
 
 1. **Start Here**: Read [`lecture/README.md`](lecture/README.md) for complete tutorial
 2. **Hands-On Practice**: Use interactive tools to run and analyze all versions
@@ -42,7 +42,7 @@ gpu-programming/
 - Hardware-aware programming concepts
 
 ### **Step 2: Programming Project (`project/`)**
-**Objective**: Apply learned concepts to solve computational problems
+**Objective**: Apply learned concepts to solve computational problems. Please follow the instructions on the PP2 document shared with you on RaiderCanvas.
 
 1. **Project Assignment**: Implement computationally intensive algorithms using CUDA
 2. **Optimization Challenge**: Apply lecture concepts to achieve good performance
@@ -80,7 +80,7 @@ cd ../project/
 cat README.md
 ```
 
-## 📊 Performance Benchmarks
+## 📊 Performance Observations
 
 ### **Lecture Materials Performance Progression**
 *Measured on NVIDIA H100 GPU with 1+ billion elements*
@@ -95,7 +95,7 @@ cat README.md
 | **v5** | Memory Prefetching | ~6.5s | **21.5x** | Peak Performance |
 
 ### **Key Performance Insights**
-- **GPU isn't automatically faster**: v1 shows overhead without proper parallelization
+- **GPU isn't automatically faster**: v1 shows code without proper parallelization
 - **Thread parallelism crucial**: v2 achieves first major speedup (10x+)
 - **Hardware utilization matters**: v3 scales across all GPU cores
 - **Memory optimization critical**: v4-v5 show significant additional gains
