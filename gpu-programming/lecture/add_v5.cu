@@ -34,7 +34,7 @@
  * - Memory allocation: CUDA Unified Memory with prefetching
  * - Initialization: GPU-parallel with optimal memory placement
  * - Processing: Full GPU parallelization with prefetched data
- * - Expected runtime: ~6.5 seconds (best performance!)
+ * - Expected runtime: ~3.9-4.0 seconds (excellent performance!)
  * - Memory bandwidth: Optimal utilization of GPU memory system
  * 
  * KEY LEARNING POINTS:
@@ -259,7 +259,7 @@ int main(void) {
   std::cout << "v2 (1 block):     ~12s  - Thread-level parallelism (10x speedup)" << std::endl;
   std::cout << "v3 (many blocks): ~11s  - Full GPU utilization" << std::endl;
   std::cout << "v4 (GPU init):     ~7s  - Memory initialization optimization" << std::endl;
-  std::cout << "v5 (prefetch):    ~6.5s - Peak performance with prefetching (21x speedup!)" << std::endl;
+  std::cout << "v5 (prefetch):    ~3.9s - Peak performance with prefetching (35x speedup!)" << std::endl;
   
   std::cout << std::endl << "KEY LEARNING OUTCOMES:" << std::endl;
   std::cout << "• GPU programming requires proper parallelization strategy" << std::endl;
