@@ -1,6 +1,6 @@
 # CS5379 GPU Programming Lecture - Build System
 # ==============================================
-# Builds all versions of vector addition (v0-v5)
+# Builds all versions of vector addition (v0-v6)
 # Usage: make [target]
 #   make all    - Build all versions
 #   make clean  - Remove executables
@@ -14,15 +14,16 @@ CUDA_FLAGS = -O3 -std=c++11 -gencode arch=compute_80,code=sm_80 -gencode arch=co
 
 # Source files and executables
 SOURCES_CPP = add_v0.cpp
-SOURCES_CU = add_v1.cu add_v2.cu add_v3.cu add_v4.cu add_v5.cu
-EXECUTABLES = add_v0.exe add_v1.exe add_v2.exe add_v3.exe add_v4.exe add_v5.exe
+SOURCES_CU = add_v1.cu add_v2.cu add_v3.cu add_v4.cu add_v5.cu add_v6.cu
+EXECUTABLES = add_v0.exe add_v1.exe add_v2.exe add_v3.exe add_v4.exe add_v5.exe add_v6.exe
 
 # Default target
 all: $(EXECUTABLES)
 	@echo "✅ All versions compiled successfully!"
 	@echo "Run './interactive_test.sh' or individual executables:"
 	@echo "   ./add_v0.exe  # CPU baseline"
-	@echo "   ./add_v5.exe  # Peak GPU performance"
+	@echo "   ./add_v5.exe  # Unified memory with prefetching"
+	@echo "   ./add_v6.exe  # Explicit memory management"
 
 # CPU version (C++)
 add_v0.exe: add_v0.cpp
@@ -41,6 +42,7 @@ app2: add_v2.exe
 app3: add_v3.exe
 app4: add_v4.exe
 app5: add_v5.exe
+app6: add_v6.exe
 
 # Cleanup
 clean:
@@ -56,13 +58,13 @@ help:
 	@echo "Available targets:"
 	@echo "  all     - Build all versions (default)"
 	@echo "  app0    - Build CPU version only"
-	@echo "  app1-5  - Build specific CUDA version"
+	@echo "  app1-6  - Build specific CUDA version"
 	@echo "  clean   - Remove all executables"
 	@echo "  help    - Show this help message"
 	@echo ""
 	@echo "Examples:"
 	@echo "  make           # Build everything"
-	@echo "  make app3      # Build only v3"
+	@echo "  make app6      # Build only v6 (explicit memory)"
 	@echo "  make clean all # Clean and rebuild"
 
 # Utility targets
@@ -80,4 +82,4 @@ info:
 	@echo "  Executables: $(EXECUTABLES)"
 
 # Phony targets
-.PHONY: all clean help check-cuda info app0 app1 app2 app3 app4 app5
+.PHONY: all clean help check-cuda info app0 app1 app2 app3 app4 app5 app6
