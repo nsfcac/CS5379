@@ -7,6 +7,6 @@
 #SBATCH --output=out.%j
 #SBATCH --error=err.%j
 
-module load openmpi/5.0.4
+module load mpich/4.1.2
 
-srun ./hello_mpi
+srun ./hello-mpi.exe
