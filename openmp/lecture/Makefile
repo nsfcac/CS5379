@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -O2 -std=c11 -Wall -Wextra -fopenmp
 LDFLAGS = -fopenmp
 
-SRCS = demo-vector.c demo-pi.c
+SRCS = demo-vector.c demo-pi.c demo-fibonacci.c
 BINS = $(SRCS:.c=.exe)
 
 .PHONY: all clean

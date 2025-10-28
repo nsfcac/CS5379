@@ -28,6 +28,5 @@ out.*
 *.err
 *.exe
 gpu-programming/project/solutions/
-openmp/c++/
 openmp/solutions/
-openmp/backups/
+openmp/project/Makefile
