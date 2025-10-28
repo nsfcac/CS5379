@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <omp.h>
 
 static int fibonacci(int n) {
@@ -37,12 +38,26 @@ static int fibonacci(int n) {
     return result;
 }
 
-int main(void) {
+int main(int argc, char **argv) {
+    int n = 4;
+
+    if (argc > 1) {
+        char *end = NULL;
+        long value = strtol(argv[1], &end, 10);
+
+        if (end == argv[1] || *end != '\0') {
+            fprintf(stderr, "Invalid length '%s'. Using default %d.\n", argv[1], n);
+        } else if (value < 0) {
+            fprintf(stderr, "Negative length '%s'. Using default %d.\n", argv[1], n);
+        } else {
+            n = (int)value;
+        }
+    }
+
     #pragma omp parallel
     {
         #pragma omp single
         {
-            int n = 4;
             printf("Fibonacci of %d is %d\n", n, fibonacci(n));
         }
     }
