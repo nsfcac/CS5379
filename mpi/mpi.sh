@@ -9,6 +9,18 @@
 
 module load mpich/4.1.2
 
-srun ./mpi_hello.exe
+#srun ./mpi_hello.exe &
+#echo -e "###\n"
 
-srun ./mpi_mpi_hello_hostname.exe
+srun ./mpi_hello_hostname.exe
+echo -e "###\n"
+
+srun ./mpi_send.exe
+echo -e "###\n"
+
+srun ./mpi_bcast.exe
+echo -e "###\n"
+
+srun ./mpi_matrixmul.exe 2048
+echo -e "###\n"
+#wait
