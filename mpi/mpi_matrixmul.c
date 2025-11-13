@@ -117,7 +117,7 @@ int main(int argc, char *argv[]) {
   // stop timer
   if (myrank == 0) {
     endTime = MPI_Wtime();
-    printf("Time is %f\n", endTime-startTime);
+    printf("The execution time is: %f (seconds)\n", endTime-startTime);
   }
   
   // print out matrix here, if I'm the master
